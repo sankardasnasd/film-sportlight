@@ -1,0 +1,47 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+
+
+<form method="post" action="/myapp/add_time_shedule_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+        <tr>
+            <td>Select Movie</td>
+            <td><select name="movie" class="form-control">
+                {% for i in data %}
+                <option value="{{ i.id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Screen </td>
+            <td><select name="screen" class="form-control">
+
+                {% for i in data2 %}
+                <option value="{{ i.id }}">{{ i.screen_number }}</option>
+                {% endfor %}
+            </select>
+            </td>        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="date" name="date" required class="form-control"></td>
+        </tr>
+        <tr>
+            <td>From Time</td>
+            <td><input type="time" name="from_time" required class="form-control"></td>
+        </tr> <tr>
+            <td>To Time</td>
+            <td><input type="time" name="to_time" required class="form-control"></td>
+        </tr>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Added" class="btn btn-success" ></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

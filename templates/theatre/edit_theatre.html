@@ -1,0 +1,64 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+
+<form method="post" action="/myapp/edit_theatre_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+        <tr>
+            <input type="hidden" name="id" value="{{ i.id }}" class="form-control">
+            <td>Name</td>
+            <td><input type="text" name="name" value="{{ i.name }}" minlength="4" pattern="[a-zA-Z]+"  class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Place</td>
+            <td><input type="text" name="place" value="{{ i.place }}" minlength="4" pattern="[a-zA-Z]+"  class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Pin</td>
+            <td><input type="text" name="pin"  value="{{ i.pin }}" pattern="[1234566789][0-9]{5}" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td><input type="text" name="city"  value="{{ i.city }}"  class="form-control"></td>
+        </tr> <tr>
+            <td>Owner Name</td>
+            <td><input type="text" name="ownername"  value="{{ i.ownername }}"  minlength="4" pattern="[a-zA-Z]+"   class="form-control"></td>
+        </tr>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone" value="{{ i.phone }}" pattern="[6789][0-9]{9}" class="form-control" ></td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><input type="file" name="photo1"  class="form-control" >
+                <img src="{{ i.photo }}" width="200px" height="200px">
+            </td>
+        </tr>
+        <tr>
+            <td>Established</td>
+            <td><input type="text" name="established" value="{{ i.established }}"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email"  value="{{ i.email }}"  class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Working Time</td>
+            <td><input type="time" name="working_time" value="{{ i.working_time }}"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td>About </td>
+            <td><input type="text" name="about" value="{{ i.about }}"  class="form-control"></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input type="submit" name="" value="Update"  class="btn btn-success" ></td>
+        </tr>
+
+    </table>
+
+</form>
+
+{% endblock %}

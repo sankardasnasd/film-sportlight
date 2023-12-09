@@ -1,0 +1,118 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>Validator Signup Form Responsive Widget Template :: w3layouts</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Validator Signup Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css file -->
+	<link rel="stylesheet" href="/static/signup/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<!-- //css file -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
+	    rel="stylesheet">
+	<!-- //web-fonts -->
+
+</head>
+
+<body>
+	<!-- title -->
+
+	<!-- //title -->
+	<!-- content -->
+	<div class="sub-main-w3">
+              <form  validate="true" method="post" action="/myapp/add_theatre_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+			<div class="form-group">
+				<label for="exampleInputText">Name</label>
+				<input type="text" class="form-control" name="name"  minlength="4"  id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">Place</label>
+				<input type="text" class="form-control" name="place"  minlength="4" pattern="[a-zA-Z]+" id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">Pin</label>
+				<input type="text" class="form-control" name="pin" maxlength="6"  minlength="4"  id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">City</label>
+				<input type="text" class="form-control" name="city" minlength="4" pattern="[a-zA-Z]+" id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">Owner Name</label>
+				<input type="text" class="form-control" name="ownername" minlength="4" pattern="[a-zA-Z]+" id="exampleInputText" placeholder="" required>
+			</div> <div class="form-group">
+				<label for="exampleInputText">Establidhed</label>
+				<input type="text" class="form-control" name="established"  id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">Working Time</label>
+				<input type="time" class="form-control" name="working_time"  id="exampleInputText" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleInputText">About </label>
+				<input type="text" class="form-control" name="about"  id="exampleInputText" placeholder="" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleMobile1">Mobile Number</label>
+				<input type="mobile" class="form-control" pattern="[6789][0-9]{9}" name="phone" id="exampleMobile1" placeholder="" required>
+			</div>
+                  <div class="form-group">
+				<label for="exampleMobile1">Image</label>
+				<input type="file" class="form-control"  name="photo1" id="exampleMobile1" placeholder="" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input maxlength="10" minlength="3" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+				    required>
+			</div>
+			<div class="form-group">
+				<label for="exampleConfirmPassword1">Confirm Password</label>
+				<input type="password" class="form-control" id="exampleConfirmPassword1" name="confirm" placeholder="Confirm Password" required data-match="password"
+				    data-match-field="#exampleInputPassword1">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+                                      					<a href="/myapp/login/" class="text-white btn btn-success">Already Have?..Login Here</a>
+
+		</form>
+	</div>
+	<!-- //content -->
+
+
+	<!-- //copyright -->
+
+	<!-- Jquery -->
+	<script src="/static/signup/js/jquery-2.2.3.min.js"></script>
+	<!-- //Jquery -->
+	<!-- Jquery -->
+	<script src="/static/signup/js/jquery-simple-validator.min.js"></script>
+	<!-- //Jquery -->
+
+</body>
+
+</html>

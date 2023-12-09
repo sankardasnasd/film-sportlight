@@ -1,0 +1,55 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+
+<form method="post" action="/myapp/theatre_view_movies_post/">
+    {% csrf_token %}
+    <table width="200" border="1" class="pull-left table table-hovered table-bordered table-stripped">
+        <tr>
+            <td><input type="text" name="search" placeholder="Enter Movie Name " class="form-control"></td>
+            <td><input type="submit" class="btn btn-success" value="Search"></td>
+        </tr>
+
+    </table>
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+         <tr>
+             <td>Sl No</td>
+             <td>Name</td>
+            <td>Duration</td>
+            <td>Language</td>
+            <td>Trailer</td>
+            <td>Poster</td>
+            <td>Certificate</td>
+            <td>Cast</td>
+            <td>Production Name</td>
+            <td>Producer Name</td>
+            <td>Director Name</td>
+            <td>Gentre Name</td>
+
+
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                {{ i.name }}
+            </td>
+            <td>{{ i.duration  }}</td>
+            <td>{{ i.language }}</td>
+            <td><video src="{{ i.trailer }}" width="200px" height="200px" controls></video> </td>
+        <td><img src="{{ i.poster }}" height="200px" width="200px"> </td>
+        <td><img src="{{ i.certificate }}" height="200px" width="200px"> </td>
+        <td>{{ i.cast_and_crew }}</td>
+        <td>{{ i.production_house_name }}</td>
+        <td>{{ i.producer_name }}</td>
+        <td>{{ i.director_name }}</td>
+        <td>{{ i.gentre }}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+{% endblock %}

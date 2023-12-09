@@ -1,0 +1,49 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+
+<form method="post" action="/myapp/edit_time_shedule_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+    <input type="hidden" name="id" value="{{ data.id }}">
+        <tr>
+            <td>Select Movie</td>
+            <td><select name="movie" class="form-control">
+             <option hidden value="{{ data.MOVIE.id}}">{{ data.MOVIE.name }}</option>
+           {% for i in movie %}
+                <option value="{{ i.id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Screen </td>
+            <td><select name="screen"  class="form-control">
+                             <option hidden value="{{ data.SCREEN.id}}">{{ data.SCREEN.screen_number }}</option>
+
+
+{% for i in screen %}
+                <option value="{{ i.id }}">{{ i.screen_number }}</option>
+                {% endfor %}            </select>
+            </td>        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="date" name="date" value="{{ data.date }}"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td>From Time</td>
+            <td><input type="time" name="from_time" value="{{ data.from_time }}"   class="form-control"></td>
+        </tr> <tr>
+            <td>To Time</td>
+            <td><input type="time" name="to_time" value="{{ data.to_time }}"   class="form-control"></td>
+        </tr>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update"   class="btn btn-success"></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

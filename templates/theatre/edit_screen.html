@@ -1,0 +1,38 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+<form method="post" action="/myapp/edit_screen_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+        <tr>
+            <input type="hidden" name="id" value="{{ i.id }}">
+            <td>Screen Size</td>
+            <td><input type="text" name="size" value="{{ i.size }}" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Screen Number</td>
+            <td><input type="text" name="screen_number" value="{{ i.screen_number }}" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Audio Type</td>
+            <td><input type="text" name="audio_type" value="{{ i.audio_type }}" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Audio Quality</td>
+            <td><input type="text" name="audio_quality"  value="{{ i.audio_quality }}" class="form-control"></td>
+        </tr> <tr>
+            <td>Seat Charge</td>
+            <td><input type="text" name="seat_charge" value="{{ i.seat_charge }}" class="form-control"></td>
+        </tr>
+        </tr>
+        <tr>
+            <td>Total Seat</td>
+            <td><input type="text" name="total_set"  value="{{ i.total_set }}" class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update" class="btn btn-success"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

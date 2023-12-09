@@ -1,0 +1,74 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta tags -->
+	<title>Winter Login Form a Simple Login form Responsive Widget :: w3layouts</title>
+	<meta name="keywords" content="Winter Login Form Responsive widget, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="/static/log/web/css/font-awesome.css">
+	<link rel="stylesheet" href="/static/log/web/css/style.css">
+	<!-- google fonts  -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+</head>
+<body>
+	<div class="agile-login">
+		<h1></h1>
+		<div class="wrapper">
+			<h2></h2>
+			<div class="w3ls-form">
+				 <form method="post" action="/myapp/add_theatre_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+					<label>Name</label>
+					<input type="text" name="name" placeholder="" minlength="4"  required/>
+                     <label>Place</label>
+{#					<input type="text" name="place" minlength="4" pattern="[a-zA-Z]+" placeholder="" required/><label>Username</label>#}
+					<input type="text" name="username" placeholder="username" required/>
+                     <label>Pin</label>
+					<input type="text" name="pin" pattern="[1234566789][0-9]{5}" placeholder="" required/>
+                     <label>City</label>
+					<input type="text" name="city" pattern="[a-zA-Z]+" placeholder="" required/>
+                     <label>Owner Name</label>
+					<input type="text" name="ownername" pattern="[a-zA-Z]+" placeholder="" required/>
+                     <label>Phone</label>
+					<input type="text" name="phone" pattern="[6789][0-9]{9}" placeholder="" required/>
+                     <label>Email</label>
+					<input type="email" name="email"  placeholder="" required/>
+                     <label>Photo</label>
+					<input type="file" name="photo1"  placeholder="" required/>
+                     <label>Established</label>
+					<input type="text" name="established" placeholder="" required/>
+                     <label>Working Time</label>
+					<input type="time" name="working_time"  placeholder="" required/>
+                     <label>About</label>
+					<input type="text" name="about"  placeholder="" required/>
+					<label>Password</label>
+					<input type="text" name="password" placeholder="password" required />
+                     <label>Password</label>
+					<input type="text" name="confirm" placeholder="password" required />
+                    					<a href="/myapp/add_theatre/" class="pass">Theatre Rigister</a>
+
+					<input type="submit" value="Sign Up" />
+
+				</form>
+			</div>
+
+
+		</div>
+		<br>
+		<div class="copyright">
+	</div>
+	</div>
+
+</body>
+</html>

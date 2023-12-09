@@ -1,0 +1,73 @@
+{% extends 'admin/admin_home2.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/myapp/edit_movie_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+<table border="1" class=" table table-hover table-bordered table-stripped ">
+  <tr>
+      <input type="hidden" value="{{ data.id }}" name="id">
+    <td>Name</td>
+    <td><label for="textfield"></label>
+      <input type="text"  class="form-control" name="name" id="textfield" value="{{ data.name }}" /></td>
+  </tr>
+
+
+
+  <tr>
+    <td>Duration</td>
+    <td><input type="text"  class="form-control" name="duration" value="{{ data.duration }}"></td>
+  </tr>
+  <tr>
+    <td>Language</td>
+    <td><input type="text"  class="form-control" name="language"  value="{{ data.language }}"></td>
+  </tr>
+  <tr>
+    <td>Trailer</td>
+    <td><input type="file" name="trailer"  class="form-control">
+        <video src="{{ data.trailer }}" width="200px" height="200px" controls></video> </td>
+  </tr>
+  <tr>
+    <td>Poster</td>
+    <td><input type="file" name="poster"  class="form-control">
+            <img src="{{ data.poster }}" height="200px" width="200px">
+
+    </td>
+  </tr>
+    <tr>
+    <td>Certificate</td>
+    <td>
+        <input type="file" name="certificate"  class="form-control">
+                    <img src="{{ data.certificate }}" height="200px" width="200px">
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>Cast And crew</td>
+    <td><input type="text" name="cast" value="{{ data.cast_and_crew }}"  class="form-control"></td>
+  </tr>
+  <tr>
+    <td>Production_house_Name</td>
+    <td><input type="text" name="production_name" value="{{ data.production_house_name }}"  class="form-control"></td>
+  </tr>
+  <tr>
+    <td>Producer Name</td>
+    <td><input type="text" name="producer_name" value="{{ data.producer_name }}"  class="form-control"></td>
+  </tr>
+  <tr>
+    <td>Director Name</td>
+    <td><input type="text" name="directior_name" value="{{ data.director_name }}"  class="form-control"></td>
+  </tr>
+  <tr>
+    <td>Gentre</td>
+    <td><input type="text" name="gentre" value="{{ data.gentre }}"  class="form-control"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value="sumbit"  class="btn btn-success"></td>
+  </tr>
+</table>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+<form method="post" action="/myapp/add_promotion_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+
+        <tr>
+            <td>Type</td>
+            <td><select name="movie"  class="form-control">
+                    <option value="video">Video</option>
+                    <option value="image">Image</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Promotion</td>
+            <td><textarea name="promotion" class="form-control" ></textarea></td>
+        </tr>
+        <tr>
+            <td>Filename</td>
+            <td><input type="File" class="form-control" name="filename" required></td>
+        </tr> <tr>
+
+            <td></td>
+            <td><input type="submit" value="Added" class="btn btn-success" ></td>
+        </tr>
+    </table>
+</form>
+
+
+{% endblock %}

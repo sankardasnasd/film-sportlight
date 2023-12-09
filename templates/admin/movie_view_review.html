@@ -1,0 +1,40 @@
+{% extends 'admin/admin_home2.html' %}
+{% block body %}
+
+<form method="post" action="/myapp/movie_review_post/">
+    {% csrf_token %}
+<table border="1" class="pull-left table table-hover table-bordered table-stripped ">
+        <tr>
+            <td>From Date:<input type="date" class="form-control" name="from" placeholder=" "></td>
+            <td>To Date<input type="date" class="form-control" name="to" placeholder=" "></td>
+            <td><input type="submit" class="btn btn-success" value="Search"></td>
+        </tr>
+
+    </table>
+
+<table border="1" class=" table table-hover table-bordered table-stripped ">
+         <tr>
+             <td>Sl No</td>
+             <td>Date</td>
+             <td>User Name</td>
+            <td>Movie Name</td>
+            <td>Review</td>
+
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                {{ i.date }}
+            </td>
+            <td>{{ i.USER.name  }}</td>
+            <td>{{ i.MOVIE.name }}</td>
+            <td>{{ i.review }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+{% endblock %}

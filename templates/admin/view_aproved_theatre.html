@@ -1,0 +1,50 @@
+{% extends 'admin/admin_home2.html' %}
+{% block body %}
+
+<form method="post" action="/myapp/view_aproved_theatre_post">
+    {% csrf_token %}
+<table border="1" class="pull-left table table-hover table-bordered table-stripped ">
+        <tr>
+            <td><input type="text" name="searching" placeholder="Enter Theatre Name " class="form-control"></td>
+            <td><input type="submit" value="Search" class="btn btn-success"></td>
+        </tr>
+
+    </table>
+<table border="1" class=" table table-hover table-bordered table-stripped ">
+         <tr>
+             <td>Sl No</td>
+             <td>Name</td>
+            <td>Email</td>
+             <td>Pin</td>
+             <td>Place</td>
+             <td>City</td>
+            <td>Owner Name</td>
+            <td>Established</td>
+            <td>Working Time</td>
+            <td>About</td>
+
+        </tr>
+
+
+        {% for i in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                <img src="{{ i.photo }}" width="200px" height="200px"><br>
+                {{ i.name }}
+            </td>
+            <td>{{ i.email  }}</td>
+            <td>{{ i.pin }}</td>
+            <td>{{ i.place }}</td>
+            <td>{{ i.city }}</td>
+            <td>{{ i.ownername }}</td>
+            <td>{{ i.established }}</td>
+            <td>{{ i.working_time }}</td>
+            <td>{{ i.about }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'admin/admin_home2.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/myapp/add_movie_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+
+  <tr>
+    <td>Name</td>
+    <td><label for="textfield"></label>
+      <input type="text" class="form-control"    name="name" id="textfield" required /></td>
+  </tr>
+
+
+
+  <tr>
+    <td>Duration</td>
+    <td><input type="text" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" required name="duration"></td>
+  </tr>
+  <tr>
+    <td>Language</td>
+    <td><input type="text" class="form-control" minlength="4" pattern="[A-Za-z]+" required name="language"></td>
+  </tr>
+  <tr>
+    <td>Trailer</td>
+    <td><input type="file" class="form-control"  required name="trailer"></td>
+  </tr>
+  <tr>
+    <td>Poster</td>
+    <td><input type="file" class="form-control" required name="poster"></td>
+  </tr>
+    <tr>
+    <td>Certificate</td>
+    <td><input type="file" class="form-control" required name="certificate"></td>
+  </tr>
+
+  <tr>
+    <td>Cast And crew</td>
+    <td><input type="text" class="form-control" minlength="4" pattern="[A-Za-z]+" required name="cast"></td>
+  </tr>
+  <tr>
+    <td>Production_house_Name</td>
+    <td><input type="text" required class="form-control" name="production_name"></td>
+  </tr>
+  <tr>
+    <td>Producer Name</td>
+    <td><input type="text" minlength="4" pattern="[A-Za-z]+" class="form-control" required name="producer_name"></td>
+  </tr>
+  <tr>
+    <td>Director Name</td>
+    <td><input type="text" class="form-control" minlength="4" pattern="[A-Za-z]+" required name="directior_name"></td>
+  </tr>
+  <tr>
+    <td>Gentre</td>
+    <td><input type="text"  class="form-control" minlength="4" pattern="[A-Za-z]+" required name="gentre"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" class="btn btn-success" value="sumbit"></td>
+  </tr>
+</table>
+
+</form>
+
+{% endblock %}

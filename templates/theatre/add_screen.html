@@ -1,0 +1,39 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+
+<form method="post" action="/myapp/add_screen_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+        <tr>
+            <td>Screen Size</td>
+            <td><input type="text"  pattern="[0-9]+([\.,][0-9]+)?" name="size" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Screen Number</td>
+            <td><input type="text" name="screen_number" class="form-control" pattern="[0-9]+"  required></td>
+        </tr>
+        <tr>
+            <td>Audio Type</td>
+            <td><input type="text" name="audio_type" class="form-control" pattern="[a-zA-Z]+"  required></td>
+        </tr>
+        <tr>
+            <td>Audio Quality</td>
+            <td><input type="text" name="audio_quality" class="form-control" pattern="[a-zA-Z]+" required></td>
+        </tr> <tr>
+            <td>Seat Charge</td>
+            <td><input type="text" name="seat_charge" class="form-control"   pattern="[0-9]+([\.,][0-9]+)?" required></td>
+        </tr>
+        </tr>
+        <tr>
+            <td>Total Seat</td>
+            <td><input type="text" name="total_set" class="form-control" pattern="[0-9]+" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Added" class="btn btn-success"  ></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

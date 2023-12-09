@@ -1,0 +1,55 @@
+{% extends 'theatre/theatre_home2.html' %}
+{% block body %}
+
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table width="200" border="1" class="table table-hovered table-bordered table-stripped">
+        <tr>
+            <td></td>
+            <td>{{ data.name }}<br><img src="{{ data.photo }}" width="200px" height="200px">
+            </td>
+        </tr>
+        <tr>
+            <td>Details</td>
+            <td>{{ data.place }}<br>
+            {{ data.pin }}<br>
+                {{ data.city }}<br>
+                since :{{ data.established }}
+            </td>
+        </tr>
+
+         <tr>
+            <td>Owner Name</td>
+            <td>{{ data.owner_name }}</td>
+        </tr>
+
+        <tr>
+            <td>Phone</td>
+            <td>{{ data.phone }}</td>
+        </tr>
+
+
+        <tr>
+            <td>Email</td>
+            <td>{{ data.email }}</td>
+        </tr>
+        <tr>
+            <td>Working Time</td>
+            <td>{{ data.working_time }}</td>
+        </tr>
+        <tr>
+            <td>About</td>
+            <td>{{ data.about }}</td>
+        </tr>
+        <tr>
+
+        <tr>
+            <td></td>
+            <td><a href="/myapp/edit_theatre/{{ data.id }}" class="btn btn-success">Edit</a> </td>
+        </tr>
+
+    </table>
+
+</form>
+
+{% endblock %}
